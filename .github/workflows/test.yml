@@ -81,6 +81,11 @@ jobs:
         lein run test --no-ssh --binary $(pwd)/resources/app --workload ${{ matrix.workload }} --time-limit 240 --nemesis ${{ matrix.nemesis }} --rate 100
         sudo ./resources/network.sh teardown 5
 
+    - name: Upterm
+      uses: lhotari/action-upterm@v1
+      with:
+        limit-access-to-actor: false
+
     - uses: actions/upload-artifact@v3
       if: failure()
       with:
