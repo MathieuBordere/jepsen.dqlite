@@ -68,6 +68,7 @@
                          :chdir   data-dir}
                         binary
                         :-dir data-dir
+                        :-disk (get-env-variable "DISK_MODE")
                         :-node (name node)
                         :-latency (:latency test)
                         :-cluster (str/join "," (:nodes test))))))

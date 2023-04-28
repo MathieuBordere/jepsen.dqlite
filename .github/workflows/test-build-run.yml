@@ -158,6 +158,7 @@ jobs:
       env:
         CGO_LDFLAGS_ALLOW: "-Wl,-z,now"
         LD_LIBRARY_PATH: "/usr/local/lib"
+        DISK_MODE: "FOO"
       timeout-minutes: 8
       run: |
         sudo ldconfig
