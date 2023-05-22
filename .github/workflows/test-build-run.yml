@@ -169,10 +169,11 @@ jobs:
       run: |
         sudo ldconfig
         go get golang.org/x/sync/semaphore
-        go get -tags libsqlite3 github.com/mathieubordere/go-dqlite/app
-        cd $(go env GOPATH)/src/github.com/mathieubordere/go-dqlite
+        git clone github.com/mathieubordere/go-dqlite
+        cd go-dqlite
         git checkout detect-EOF
-        cd -
+        go install -tags libsqlite3
+        cd ..
 
         go build -tags libsqlite3 -o resources/app resources/app.go
         sudo ufw disable
