@@ -169,7 +169,7 @@ jobs:
       run: |
         sudo ldconfig
         go get golang.org/x/sync/semaphore
-        git clone github.com/mathieubordere/go-dqlite
+        git clone https://github.com/mathieubordere/go-dqlite
         cd go-dqlite
         git checkout detect-EOF
         go install -tags libsqlite3
