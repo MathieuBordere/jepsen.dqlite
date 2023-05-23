@@ -7,4 +7,4 @@ require (
 	golang.org/x/sync v0.1.0
 )
 
-replace github.com/canonical/go-dqlite => github.com/mathieubordere/go-dqlite v1.8.1-0.20230523083644-12e5664a01b3
+replace github.com/canonical/go-dqlite => github.com/mathieubordere/go-dqlite v1.8.1-0.20230515081905-1a24816474ae
