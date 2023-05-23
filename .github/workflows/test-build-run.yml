@@ -171,7 +171,7 @@ jobs:
         go get golang.org/x/sync/semaphore
         git clone https://github.com/mathieubordere/go-dqlite
         cd go-dqlite
-        git checkout detect-EOF
+        git checkout crash
         go install -tags libsqlite3
         cd ..
 
