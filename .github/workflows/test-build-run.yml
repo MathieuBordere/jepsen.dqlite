@@ -168,13 +168,6 @@ jobs:
       timeout-minutes: 8
       run: |
         sudo ldconfig
-        go get golang.org/x/sync/semaphore
-        git clone https://github.com/mathieubordere/go-dqlite
-        cd go-dqlite
-        git checkout crash
-        go install -tags libsqlite3
-        cd ..
-
         go build -tags libsqlite3 -o resources/app resources/app.go
         sudo ufw disable
         sleep 0.200
