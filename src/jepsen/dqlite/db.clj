@@ -270,6 +270,10 @@
               app-binary (when (seq core-dumps) binary)
               everything (remove nil? [logfile tarball app-binary])]
           (try
+            (info "Show data-dir")
+            (let [result (c/exec :ls "-la")]
+                (info (str (:out result))))
+            (info "Show data-dir end")
             (c/exec :tar :cjf tarball data-dir)
             (catch Exception e (str "caught exception: " (.getMessage e))))
           everything))
