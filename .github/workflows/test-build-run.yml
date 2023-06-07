@@ -208,5 +208,3 @@ jobs:
         name: jepsen-data-${{ matrix.workload }}-${{ matrix.nemesis }}-failure
         path: |
           store/dqlite*
-          !**/current/
-          !**/latest/
