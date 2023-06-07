@@ -116,7 +116,7 @@ jobs:
       timeout-minutes: 15
       run: |
         sudo apt update
-        sudo apt install -y gnuplot libsqlite3-dev libuv1-dev liblz4-dev libjna-java graphviz leiningen build-essential
+        sudo apt install -y tree gnuplot libsqlite3-dev libuv1-dev liblz4-dev libjna-java graphviz leiningen build-essential
         printf core | sudo tee /proc/sys/kernel/core_pattern
 
     - name: Install local Jepsen
@@ -184,6 +184,7 @@ jobs:
           --disk ${{ matrix.disk }} \
           ${{ inputs.cli-opts }}
         sudo ./resources/network.sh teardown 5
+        tree store
 
     - name: Jepsen log Summary
       if: ${{ always() }}
