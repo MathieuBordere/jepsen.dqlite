@@ -31,7 +31,7 @@ jobs:
           'partition,stop', 'partition,kill', 'partition,member',
           'packet,stop' ]
       disk: >
-        [ '0' ]
+        [ '0', '1' ]
       jepsen-dqlite-repo: ${{ github.repository }}
       jepsen-dqlite-branch: ${{ github.ref }}
       raft-repo: ${{ inputs.raft-repo || 'https://github.com/Canonical/raft.git' }}
