@@ -185,6 +185,7 @@ jobs:
           ${{ inputs.cli-opts }}
         sudo ./resources/network.sh teardown 5
         tree store
+        ls
 
     - name: Jepsen log Summary
       if: ${{ always() }}
