@@ -184,9 +184,9 @@ jobs:
           --disk ${{ matrix.disk }} \
           ${{ inputs.cli-opts }}
         sudo ./resources/network.sh teardown 5
-        tree store
-        ls
-        ls 1>&2
+
+    - name: Print stuff
+      run: tree store
 
     - name: Jepsen log Summary
       if: ${{ always() }}
