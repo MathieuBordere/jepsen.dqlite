@@ -271,8 +271,8 @@
               everything (remove nil? [logfile tarball app-binary])]
           (try
             (info "Show data-dir")
-            (let [result (c/exec :ls "-la")]
-                (info (str (:out result))))
+            (let [result (c/exec "sh" "-c" (str "ls -la"))]
+                (info "contents: " (str (:out result))))
             (info "Show data-dir end")
             (c/exec :tar :cjf tarball data-dir)
             (catch Exception e (str "caught exception: " (.getMessage e))))
